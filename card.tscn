@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://bb14pln1wt34i"]
+
+[ext_resource type="Script" uid="uid://bus8uatb2s2pl" path="res://card.gd" id="1_rjlel"]
+[ext_resource type="Texture2D" uid="uid://ciqhckowhkjk6" path="res://rewers.png" id="2_rjlel"]
+[ext_resource type="Texture2D" uid="uid://d1bb7kc673s8r" path="res://HEART.png" id="3_fpac0"]
+[ext_resource type="Texture2D" uid="uid://6khvtqxrb0f1" path="res://SPIRAL.png" id="4_1i5pp"]
+[ext_resource type="Texture2D" uid="uid://v0n77qkx11hb" path="res://STAR.png" id="5_pjytt"]
+[ext_resource type="Texture2D" uid="uid://ge6ufa2m870p" path="res://APPLE.png" id="5_ut1v0"]
+[ext_resource type="Texture2D" uid="uid://b2bdpchpf1jfj" path="res://BOLT.png" id="6_vno60"]
+[ext_resource type="Texture2D" uid="uid://3vn6lgi4uuup" path="res://HOUSE.png" id="7_l0gnn"]
+[ext_resource type="Texture2D" uid="uid://ncvflubn5ntk" path="res://KONICZYNA.png" id="8_is7yf"]
+[ext_resource type="Texture2D" uid="uid://gj3c75cycu0f" path="res://PAW.png" id="9_5biq5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjlel"]
+radius = 25.333334
+height = 85.333336
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lcat"]
+atlas = ExtResource("3_fpac0")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut1v0"]
+atlas = ExtResource("4_1i5pp")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vno60"]
+atlas = ExtResource("5_pjytt")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kicxe"]
+atlas = ExtResource("5_ut1v0")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaj0s"]
+atlas = ExtResource("6_vno60")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbpyt"]
+atlas = ExtResource("7_l0gnn")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8qr4"]
+atlas = ExtResource("8_is7yf")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvrdl"]
+atlas = ExtResource("9_5biq5")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4rk6"]
+atlas = ExtResource("2_rjlel")
+region = Rect2(0, 0, 600, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckrfe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lcat")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut1v0")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vno60")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kicxe")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaj0s")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbpyt")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8qr4")
+}],
+"loop": 1,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvrdl")
+}],
+"loop": 1,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4rk6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_l0gnn"]
+resource_name = "star"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_is7yf"]
+_data = {
+&"star": SubResource("Animation_l0gnn")
+}
+
+[node name="card" type="StaticBody2D" unique_id=396546727]
+scale = Vector2(1.5, 1.5)
+input_pickable = true
+script = ExtResource("1_rjlel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486481503]
+shape = SubResource("CapsuleShape2D_rjlel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=117121057]
+unique_name_in_owner = true
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_ckrfe")
+animation = &"8"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=703976747]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_is7yf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

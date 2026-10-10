@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bhjgy6u68i0px"]
+
+[ext_resource type="Script" uid="uid://c7akms64pr8y4" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bb14pln1wt34i" path="res://card.tscn" id="2_feb5d"]
+[ext_resource type="FontFile" uid="uid://dbtktfacn3ylq" path="res://good-choice/Good Choice.ttf" id="3_feb5d"]
+
+[node name="game" type="Node2D" unique_id=1230258994]
+script = ExtResource("1_e2o6t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138763702]
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 1160.0
+offset_bottom = 665.0
+mouse_filter = 2
+color = Color(0.3494032, 0.0006956819, 0.48943472, 1)
+
+[node name="card" parent="." unique_id=396546727 instance=ExtResource("2_feb5d")]
+unique_name_in_owner = true
+position = Vector2(-108, -104)
+
+[node name="gracz1" type="Label" parent="." unique_id=907681341]
+unique_name_in_owner = true
+offset_left = 989.0
+offset_top = 10.0
+offset_right = 1142.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("3_feb5d")
+theme_override_font_sizes/font_size = 40
+text = "Gracz 1:
+0"
+horizontal_alignment = 1
+
+[node name="gracz2" type="Label" parent="." unique_id=943791902]
+unique_name_in_owner = true
+offset_left = 984.0
+offset_top = 134.0
+offset_right = 1150.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("3_feb5d")
+theme_override_font_sizes/font_size = 40
+text = "Gracz 2:
+0"
+horizontal_alignment = 1
